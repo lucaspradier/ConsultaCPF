@@ -10,8 +10,6 @@ def gerar_digitos_aleatorios():
     return cpf
 
 
-
-
 ##Gera os dois ultimos digitos
 def gera_digitos(cpf,num):
     soma = sum(int(digito) * (num - i) for i, digito in enumerate(cpf))
@@ -24,8 +22,6 @@ def gerar_cpf():
     dez_digitos = nove_digitos + gera_digitos(nove_digitos, 10)
     cpf_gerado = dez_digitos + gera_digitos(dez_digitos, 11)
     return cpf_gerado
-
-
 
 def validar_cpf():
     #Variavel 'retorno' para armazernar a mensagem que sera apresentada na Leabel
@@ -64,14 +60,10 @@ def validar_cpf():
     # Verificar se os dígitos verificadores estão corretos
     return cpf[-2:] == str(digito_1) + str(digito_2)
 
-
-
-
 def gerar_cpf_callback():
     resultado_entry.delete(0,ctk.END)
     cpf_gerado = gerar_cpf()
     resultado_entry.insert(0, cpf_gerado)
-
 
 janela = ctk.CTk()
 janela.title("Gerador de CPF")
