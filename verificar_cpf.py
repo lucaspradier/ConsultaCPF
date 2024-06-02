@@ -10,7 +10,7 @@ def gerar_digitos_aleatorios():
     return cpf
 
 
-##Gera os dois ultimos digitos
+#Gera os dois ultimos digitos
 def gera_digitos(cpf,num):
     soma = sum(int(digito) * (num - i) for i, digito in enumerate(cpf))
     digito_gerado = (soma * 10) % 11
